@@ -1,0 +1,17 @@
+.footer {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  color: #61dafb;
+}

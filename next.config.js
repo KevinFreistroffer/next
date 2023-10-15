@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  env: {
+    OPENAI_API_KEY: "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",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
