@@ -7,20 +7,13 @@ export interface IData {
 }
 
 export function getData(): IData[] {
-  return [
-    {
-      horsepower: 140,
-      mpg: 100,
-    },
-    {
-      horsepower: 160,
-      mpg: 25,
-    },
-    {
-      horsepower: 300,
-      mpg: 11,
-    },
-  ];
+  const data: IData[] = [];
+  for (let i = 0; i < 100; i++) {
+    const horsepower = Math.floor(Math.random() * 200) + 50;
+    const mpg = horsepower * 0.1 + Math.random() * 5;
+    data.push({ horsepower, mpg });
+  }
+  return data;
 }
 
 export const createModel = () => {
