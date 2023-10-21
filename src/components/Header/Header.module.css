@@ -35,10 +35,10 @@
 }
 
 .algorithms-button {
-  color: white;
+  color: white !important;
   text-transform: none;
 }
 .active {
-  color: #1dbfdb;
+  color: #1dbfdb !important;
   font-weight: bold;
 }

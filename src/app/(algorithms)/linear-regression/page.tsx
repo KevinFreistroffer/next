@@ -3,7 +3,6 @@ import React, { useEffect, useState, Suspense } from "react";
 import Head from "next/head";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
-import Weather from "./components/Weather";
 import * as tf from "@tensorflow/tfjs";
 
 const LinearRegressionPage = () => {
@@ -75,11 +74,7 @@ const LinearRegressionPage = () => {
     });
   }, []);
 
-  return (
-    <div className={styles.container}>
-      LinearRegression! <Weather />
-    </div>
-  );
+  return <div className={styles.container}>LinearRegression!</div>;
 };
 
 export default LinearRegressionPage;
