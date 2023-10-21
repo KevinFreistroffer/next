@@ -14,6 +14,8 @@ import {
 } from "./services";
 const LinearRegressionPage = () => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isTraining, setIsTraining] = useState<boolean>(false);
 
   useEffect(() => {
     (async () => {
@@ -23,17 +25,31 @@ const LinearRegressionPage = () => {
         const tensorData = convertToTensor(data);
         const { inputs, labels } = tensorData;
         await trainModel(model, inputs, labels);
+        setIsLoading(false);
+        setIsTraining(true);
         testModel(model, data, tensorData);
+        setIsTraining(false);
       }
+      setIsLoading(false); // set loading to false after data is fetched
     })();
   }, []);
 
   return (
     <div className={styles.container}>
-      LinearRegression!
-      <div>
-        <button>Train Model</button>
-      </div>
+      {isLoading ? (
+        <div>Loading...</div> // show loading spinner while data is being fetched
+      ) : (
+        <>
+          <div>LinearRegression!</div>
+          <div>
+            {isTraining ? (
+              <div>Training...</div>
+            ) : (
+              <div>Training complete!</div>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 };
