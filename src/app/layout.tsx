@@ -3,9 +3,10 @@ import Footer from "@/components/Footer";
 import Main from "@/components/Main";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head></head>
+      <body className={montserrat.className}>
         <Header />
         <Main>{children}</Main>
         <Footer />

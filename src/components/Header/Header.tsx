@@ -2,10 +2,89 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"] });
+
+export function BasicMenu() {
+  const pathname = usePathname();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <>
+      <Button
+        id="algorithms-button"
+        aria-controls={open ? "basic-menu" : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? "true" : undefined}
+        onClick={handleClick}
+        className={`${montserrat.className} ${styles["algorithms-button"]} ${
+          pathname === "/linear-regression" ||
+          pathname === "/logistic-regression" ||
+          pathname === "/gpt4"
+            ? styles.active
+            : ""
+        }`}
+      >
+        Algorithms
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem onClick={handleClose}>
+          {" "}
+          <Link
+            href="/linear-regression"
+            className={`${
+              pathname === "/linear-regression" ? styles.active : ""
+            }`}
+          >
+            Linear
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link
+            href="/logistic-regression"
+            className={`${
+              pathname === "/logistic-regression" ? styles.active : ""
+            }`}
+          >
+            Logistic
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link
+            href="/gpt4"
+            className={`${pathname === "/gpt4" ? styles.active : ""}`}
+          >
+            GPT4
+          </Link>
+        </MenuItem>
+      </Menu>
+    </>
+  );
+}
 
 export const Header = () => {
   const pathname = usePathname();
-  console.log(pathname);
+  const [shouldShowDropdown, setShouldShowDropdown] = useState(false);
 
   return (
     <header className={styles.header}>
@@ -25,33 +104,8 @@ export const Header = () => {
             </Link>
           </li>
           <li>
-            <Link
-              href="/linear-regression"
-              className={`${
-                pathname === "/linear-regression" ? styles.active : ""
-              }`}
-            >
-              Linear
-            </Link>
+            <BasicMenu />
           </li>
-          <li>
-            <Link
-              href="/logistic-regression"
-              className={`${
-                pathname === "/logistic-regression" ? styles.active : ""
-              }`}
-            >
-              Logistic
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/gpt4"
-              className={`${pathname === "/gpt4" ? styles.active : ""}`}
-            >
-              GPT4
-            </Link>
-          </li>{" "}
           <li>
             <Link
               href="/dashboard"

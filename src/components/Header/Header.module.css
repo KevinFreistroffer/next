@@ -26,12 +26,19 @@
 .ul li {
   margin: 0 1rem;
   transition: all 0.1s linear;
+  font-weight: 500;
 }
 
-.ul li:hover {
+.ul li:hover,
+.algorithms-button:hover {
   color: #1dbfdb;
 }
 
+.algorithms-button {
+  color: white;
+  text-transform: none;
+}
 .active {
   color: #1dbfdb;
+  font-weight: bold;
 }

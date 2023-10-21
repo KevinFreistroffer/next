@@ -2,6 +2,14 @@
   padding: 3rem;
 }
 
+.left-right-bottom-container {
+  width: 80%;
+}
+
+.feed-container {
+  width: 20%;
+}
+
 .left,
 .right,
 .bottom {
@@ -27,11 +35,20 @@
 .right {
   float: right;
   width: 50%;
-  border-radius: 0 0.5rem 0 0;
+  border-radius: 0;
 }
 
 .bottom {
   clear: both;
   border-top: none;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0 0 0.5rem;
+}
+
+.feed {
+  width: 80%;
+  padding: 2rem;
+  height: 100%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0 1rem 1rem 0;
 }

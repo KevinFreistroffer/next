@@ -12,7 +12,18 @@ const Dashboard = ({
   freistroffer: ReactNode;
   children: ReactNode;
 }) => {
-  return <div>fdfdasfds</div>;
+  return (
+    <div>
+      <h2>The rest of the content</h2>
+      <h3>Such as a sub heading</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe
+        accusantium aliquid eveniet inventore dolore at, voluptates perspiciatis
+        minus beatae aspernatur doloremque tempora nemo ipsa cupiditate iure ab
+        repellat nisi recusandae.
+      </p>
+    </div>
+  );
 };
 
 export default Dashboard;
