@@ -21,10 +21,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <div>
-        <Link href="/dashboard">Dashboard</Link>
-        <Link href="/linear-regression">Linear Regression</Link>
-        <Link href="/logistic-regression">Logistic Regression</Link>
-        <Link href="/gpt4">GPT4</Link>
+        <h1>Welcome!!!!!</h1>
       </div>
     </div>
   );
