@@ -37,7 +37,7 @@ export function BasicMenu() {
             : ""
         }`}
         sx={{
-          "font-family": "Montserrat, sans-serif;",
+          fontFamily: "Montserrat, sans-serif;",
           fontWeight: "bold",
         }}
       >
