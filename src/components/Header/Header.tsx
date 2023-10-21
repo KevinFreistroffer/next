@@ -29,13 +29,17 @@ export function BasicMenu() {
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        className={`${montserrat.className} ${styles["algorithms-button"]} ${
+        className={`${styles["algorithms-button"]} ${montserrat.className} ${
           pathname === "/linear-regression" ||
           pathname === "/logistic-regression" ||
           pathname === "/gpt4"
             ? styles.active
             : ""
         }`}
+        sx={{
+          "font-family": "Montserrat, sans-serif;",
+          fontWeight: "bold",
+        }}
       >
         Algorithms
       </Button>

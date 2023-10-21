@@ -35,10 +35,12 @@
 }
 
 .algorithms-button {
+  /* TODO: how to fix MUI overriding the color in vercel build? avoid !important */
   color: white !important;
   text-transform: none;
 }
 .active {
+  /* TODO: how to fix MUI overriding the color in vercel build? avoid !important */
   color: #1dbfdb !important;
   font-weight: bold;
 }
