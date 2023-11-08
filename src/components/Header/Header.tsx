@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Montserrat } from "next/font/google";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -40,6 +41,7 @@ export function BasicMenu() {
           fontFamily: "Montserrat, sans-serif;",
           fontWeight: "bold",
         }}
+        endIcon={<KeyboardArrowDownIcon />}
       >
         Algorithms
       </Button>
@@ -50,6 +52,11 @@ export function BasicMenu() {
         onClose={handleClose}
         MenuListProps={{
           "aria-labelledby": "basic-button",
+        }}
+        sx={{
+          "& .MuiList-root": {
+            minWidth: "10rem",
+          },
         }}
       >
         <MenuItem onClick={handleClose}>

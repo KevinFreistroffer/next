@@ -14,11 +14,10 @@ const Layout = ({
   const [pageClicks, setPageClicks] = useState(0);
   return (
     <div className={styles.container}>
-      <h1>Algorithms</h1>
       <main>
-        <div>{left}</div>
+        <div id="left">{left}</div>
         {children}
-        <div>{right}</div>
+        <div id="right">{right}</div>
       </main>
     </div>
   );

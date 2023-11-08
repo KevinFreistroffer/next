@@ -8,7 +8,7 @@ export interface IData {
 
 export function getData(): IData[] {
   const data: IData[] = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000; i++) {
     const horsepower = Math.floor(Math.random() * 200) + 50;
     const mpg = horsepower * 0.1 + Math.random() * 5;
     data.push({ horsepower, mpg });
@@ -91,6 +91,9 @@ export function testModel(model, inputData, normalizationData) {
     y: d.mpg,
   }));
 
+  console.log(originalPoints);
+  console.log(predictedPoints);
+
   tfvis.render.scatterplot(
     { name: "Model Predictions vs Original Data" },
     {
@@ -117,7 +120,7 @@ export const trainModel = async (
     metrics: ["mse"],
   });
   const batchSize = 32;
-  const epochs = 50;
+  const epochs = 100;
   await model.fit(inputs, labels, {
     batchSize,
     epochs,
